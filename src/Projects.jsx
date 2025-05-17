@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+// Import all assets
+import SmartFreelanceHub from './assets/Uploads/Smart Freelance Hub.jpeg';
+import SmartFreelanceHub2 from './assets/Uploads/Smart Freelance Hub2.PNG';
+import SmartFreelanceHub3 from './assets/Uploads/Smart Freelance Hub3.PNG';
+import AdleadVid from './assets/Uploads/Adlead Vid.mp4';
+import WSneakersVid from './assets/Uploads/WSneakers.mp4';
+import Cricket from './assets/Uploads/Cricket.PNG';
+import CricketGameplay from './assets/Uploads/Cricket Gameplay.PNG';
+import Chess from './assets/Uploads/Chess.PNG';
+import Chess1 from './assets/Uploads/Chess1.PNG';
+import CreditCard from './assets/Uploads/Credit Card.jpeg';
+import CSE465 from './assets/Uploads/CSE465.png';
+import CSE465_1 from './assets/Uploads/CSE465 1.png';
+import CSE465_2 from './assets/Uploads/CSE465 2.png';
+
 const projects = {
   webApps: [
     {
@@ -10,9 +25,9 @@ const projects = {
       github: "https://github.com/yourusername/ecommerce",
       live: "https://your-ecommerce-demo.com",
       media: [
-        { src: "/public/Uploads/Smart Freelance Hub.jpeg", type: "image" },
-        { src: "/public/Uploads/Smart Freelance Hub2.PNG", type: "image" },
-        { src: "/public/Uploads/Smart Freelance Hub3.PNG", type: "image" }
+        { src: SmartFreelanceHub, type: "image" },
+        { src: SmartFreelanceHub2, type: "image" },
+        { src: SmartFreelanceHub3, type: "image" }
       ]
     },
     {
@@ -22,8 +37,7 @@ const projects = {
       github: "",
       live: "https://adlead.site/",
       media: [
-        { src: "/public/Uploads/Adlead Vid.mp4", type: "video" },
-        // { src: "/public/Uploads/Adlead Screenshot.png", type: "image" }
+        { src: AdleadVid, type: "video" }
       ]
     },
     {
@@ -33,8 +47,7 @@ const projects = {
       github: "",
       live: "",
       media: [
-        { src: "/public/Uploads/WSneakers.mp4", type: "video" },
-        // { src: "/public/Uploads/WSneakers2.jpg", type: "image" }
+        { src: WSneakersVid, type: "video" }
       ]
     }
   ],
@@ -47,8 +60,8 @@ const projects = {
       github: "",
       live: "https://play.google.com/store/apps/details?id=com.BelfordBlaze.SuperCricketBatsBlades",
       media: [
-        { src: "/public/Uploads/Cricket.PNG", type: "image" },
-        { src: "/public/Uploads/Cricket Gameplay.PNG", type: "image" }
+        { src: Cricket, type: "image" },
+        { src: CricketGameplay, type: "image" }
       ]
     },
     {
@@ -58,8 +71,8 @@ const projects = {
       github: "",
       live: "",
       media: [
-        { src: "/public/Uploads/Chess.PNG", type: "image" },
-        { src: "/public/Uploads/Chess1.PNG", type: "image" }
+        { src: Chess, type: "image" },
+        { src: Chess1, type: "image" }
       ]
     }
   ],
@@ -71,8 +84,7 @@ const projects = {
       github: "https://github.com/Crysis-Pixel/CSE445-Credit-Card-Fraud-Detection",
       live: "",
       media: [
-        { src: "/public/Uploads/Credit Card.jpeg", type: "image" },
-        // { src: "/Uploads/AI Chatbot Demo.mp4", type: "video" }
+        { src: CreditCard, type: "image" }
       ]
     },
     {
@@ -82,9 +94,9 @@ const projects = {
       github: "",
       live: "",
       media: [
-        { src: "/public/Uploads/CSE465.png", type: "image" },
-        { src: "/public/Uploads/CSE465 1.png", type: "image" },
-        { src: "/public/Uploads/CSE465 2.png", type: "image" }
+        { src: CSE465, type: "image" },
+        { src: CSE465_1, type: "image" },
+        { src: CSE465_2, type: "image" }
       ]
     }
   ]
@@ -170,8 +182,7 @@ function Projects({ activeSection }) {
               <button
                 onClick={() => handleNext(projectIndex)}
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
-              >
-                <FaChevronRight />
+              > <FaChevronRight />
               </button>
             )}
           </>

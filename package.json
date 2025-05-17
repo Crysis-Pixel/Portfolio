@@ -1,5 +1,5 @@
 {
-  "homepage": "https://crysis-pixel.github.io/Portfolio/",
+  "homepage": "https://crysis-pixel.github.io/Portfolio",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --branch gh-pages --message 'Deploy'"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
