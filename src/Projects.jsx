@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-
-// Import all assets
+import { motion } from 'framer-motion';
 import SmartFreelanceHub from './assets/Uploads/Smart Freelance Hub.jpeg';
 import SmartFreelanceHub2 from './assets/Uploads/Smart Freelance Hub2.PNG';
 import SmartFreelanceHub3 from './assets/Uploads/Smart Freelance Hub3.PNG';
@@ -19,87 +18,82 @@ import CSE465_2 from './assets/Uploads/CSE465 2.png';
 const projects = {
   webApps: [
     {
-      title: "Smart Freelance Hub",
-      description: "A full-stack online store with payment integration",
-      tech: ["React", "Express JS", "MongoDB", "Flask"],
-      github: "https://github.com/yourusername/ecommerce",
-      live: "https://your-ecommerce-demo.com",
+      title: 'Smart Freelance Hub',
+      description: 'A full-stack online store with AI powered recommendation system and payment integration',
+      tech: ['React', 'Express JS', 'MongoDB', 'Flask'],
+      github: 'https://github.com/yourusername/ecommerce',
+      live: 'https://your-ecommerce-demo.com',
       media: [
-        { src: SmartFreelanceHub, type: "image" },
-        { src: SmartFreelanceHub2, type: "image" },
-        { src: SmartFreelanceHub3, type: "image" }
-      ]
+        { src: SmartFreelanceHub, type: 'image' },
+        { src: SmartFreelanceHub2, type: 'image' },
+        { src: SmartFreelanceHub3, type: 'image' },
+      ],
     },
     {
-      title: "Adlead",
-      description: "Static Website for an Online Store Company with hosting",
-      tech: ["React"],
-      github: "",
-      live: "https://adlead.site/",
-      media: [
-        { src: AdleadVid, type: "video" }
-      ]
+      title: 'Adlead',
+      description: 'Static Website for an Online Store Company with hosting',
+      tech: ['React'],
+      github: '',
+      live: 'https://adlead.site/',
+      media: [{ src: AdleadVid, type: 'video' }],
     },
     {
-      title: "WSneakers",
-      description: "Full website with raw php, html and css",
-      tech: ["PHP", "phpMyAdmin", "html", "css"],
-      github: "",
-      live: "",
-      media: [
-        { src: WSneakersVid, type: "video" }
-      ]
-    }
+      title: 'WSneakers',
+      description: 'Full website with raw php, html and css',
+      tech: ['PHP', 'phpMyAdmin', 'html', 'css'],
+      github: '',
+      live: '',
+      media: [{ src: WSneakersVid, type: 'video' }],
+    },
   ],
   softwareApps: [],
   videoGames: [
     {
-      title: "Cricket Game",
-      description: "Indie Mobile Cricket Game published in playstore",
-      tech: ["Unity", "C#"],
-      github: "",
-      live: "https://play.google.com/store/apps/details?id=com.BelfordBlaze.SuperCricketBatsBlades",
+      title: 'Cricket Game',
+      description: 'Indie Mobile Cricket Game published in playstore',
+      tech: ['Unity', 'C#'],
+      github: '',
+      live: 'https://play.google.com/store/apps/details?id=com.BelfordBlaze.SuperCricketBatsBlades',
       media: [
-        { src: Cricket, type: "image" },
-        { src: CricketGameplay, type: "image" }
-      ]
+        { src: Cricket, type: 'image' },
+        { src: CricketGameplay, type: 'image' },
+      ],
     },
     {
-      title: "Chess Game",
-      description: "A self made Chess Game in Java without using any third party engine",
-      tech: ["Java"],
-      github: "",
-      live: "",
+      title: 'Chess Game',
+      description: 'A self made Chess Game in Java without using any third party engine',
+      tech: ['Java'],
+      github: '',
+      live: '',
       media: [
-        { src: Chess, type: "image" },
-        { src: Chess1, type: "image" }
-      ]
-    }
+        { src: Chess, type: 'image' },
+        { src: Chess1, type: 'image' },
+      ],
+    },
   ],
   aiProjects: [
     {
-      title: "Credit Card Fraud Detection",
-      description: "Supervised Machine learning problem where algorithms like decision tree, random forest are used",
-      tech: ["Python", "TensorFlow", "MatplotLib", "Pandas", "Scikit-learn"],
-      github: "https://github.com/Crysis-Pixel/CSE445-Credit-Card-Fraud-Detection",
-      live: "",
-      media: [
-        { src: CreditCard, type: "image" }
-      ]
+      title: 'Credit Card Fraud Detection',
+      description: 'Supervised Machine learning problem where algorithms like decision tree, random forest are used',
+      tech: ['Python', 'TensorFlow', 'MatplotLib', 'Pandas', 'Scikit-learn'],
+      github: 'https://github.com/Crysis-Pixel/CSE445-Credit-Card-Fraud-Detection',
+      live: '',
+      media: [{ src: CreditCard, type: 'image' }],
     },
     {
-      title: "Classifying Dim Small-Scale Targets in Low-Visibility Imagery Using Convolutional Neural Networks",
-      description: "Several existing CNN architectures are applied and ResNeXt50 among them achieved the highest accuracy of 99.96%. Additionally, we developed a custom lightweight CNN model tailored for this task, which attained a strong accuracy of 99.25% with significant lower number of parameters. To ensure the interpretability, Explainable AI (particularly LIME) was employed to analyze the model’s predictions.",
-      tech: ["Python", "PyTorch", "CNN", "MatplotLib", "Pandas", "Scikit-learn"],
-      github: "",
-      live: "",
+      title: 'Classifying Dim Small-Scale Targets in Low-Visibility Imagery Using Convolutional Neural Networks',
+      description:
+        'Several existing CNN architectures are applied and ResNeXt50 among them achieved the highest accuracy of 99.96%. Additionally, we developed a custom lightweight CNN model tailored for this task, which attained a strong accuracy of 99.25% with significant lower number of parameters.',
+      tech: ['Python', 'PyTorch', 'CNN', 'MatplotLib', 'Pandas', 'Scikit-learn'],
+      github: '',
+      live: '',
       media: [
-        { src: CSE465, type: "image" },
-        { src: CSE465_1, type: "image" },
-        { src: CSE465_2, type: "image" }
-      ]
-    }
-  ]
+        { src: CSE465, type: 'image' },
+        { src: CSE465_1, type: 'image' },
+        { src: CSE465_2, type: 'image' },
+      ],
+    },
+  ],
 };
 
 function Projects({ activeSection }) {
@@ -110,19 +104,21 @@ function Projects({ activeSection }) {
     { id: 'webApps', name: 'Web Apps' },
     { id: 'softwareApps', name: 'Software' },
     { id: 'videoGames', name: 'Games' },
-    { id: 'aiProjects', name: 'AI Projects' }
+    { id: 'aiProjects', name: 'AI Projects' },
   ];
 
   const getFilteredProjects = () => {
-    if (activeSection === 'all') {
+    const validSections = ['all', 'webApps', 'softwareApps', 'videoGames', 'aiProjects'];
+    const effectiveSection = validSections.includes(activeSection) ? activeSection : 'all';
+    if (effectiveSection === 'all') {
       return [
         ...projects.webApps,
         ...projects.softwareApps,
         ...projects.videoGames,
-        ...projects.aiProjects
+        ...projects.aiProjects,
       ];
     }
-    return projects[activeSection] || [];
+    return projects[effectiveSection] || [];
   };
 
   const handlePrev = (projectIndex) => {
@@ -131,7 +127,7 @@ function Projects({ activeSection }) {
       const mediaLength = getFilteredProjects()[projectIndex].media.length;
       return {
         ...prev,
-        [projectIndex]: (currentIndex - 1 + mediaLength) % mediaLength
+        [projectIndex]: (currentIndex - 1 + mediaLength) % mediaLength,
       };
     });
   };
@@ -142,7 +138,7 @@ function Projects({ activeSection }) {
       const mediaLength = getFilteredProjects()[projectIndex].media.length;
       return {
         ...prev,
-        [projectIndex]: (currentIndex + 1) % mediaLength
+        [projectIndex]: (currentIndex + 1) % mediaLength,
       };
     });
   };
@@ -155,7 +151,7 @@ function Projects({ activeSection }) {
         {type === 'video' ? (
           <video
             src={src}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover rounded-t-lg"
             controls
             muted
             autoPlay
@@ -165,7 +161,7 @@ function Projects({ activeSection }) {
           <img
             src={src}
             alt="Project media"
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover rounded-t-lg"
           />
         )}
         {media.length > 1 && (
@@ -173,7 +169,7 @@ function Projects({ activeSection }) {
             {currentIndex > 0 && (
               <button
                 onClick={() => handlePrev(projectIndex)}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
               >
                 <FaChevronLeft />
               </button>
@@ -181,8 +177,9 @@ function Projects({ activeSection }) {
             {currentIndex < media.length - 1 && (
               <button
                 onClick={() => handleNext(projectIndex)}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
-              > <FaChevronRight />
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+              >
+                <FaChevronRight />
               </button>
             )}
           </>
@@ -192,59 +189,74 @@ function Projects({ activeSection }) {
   };
 
   return (
-    <main className="py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-3xl font-bold text-gray-900 mb-8">
-          {sections.find((s) => s.id === activeSection)?.name}
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {getFilteredProjects().map((project, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
-            >
-              {renderMedia(project.media, index)}
-              <div className="p-6">
-                <h4 className="text-xl font-semibold text-gray-900">{project.title}</h4>
-                <p className="mt-2 text-gray-600">{project.description}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-4 flex space-x-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900"
-                    >
-                      <FaGithub size={24} />
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900"
-                    >
-                      <FaExternalLinkAlt size={24} />
-                    </a>
-                  )}
-                </div>
+    <motion.div
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.h3
+        className="text-3xl font-bold text-white mb-8 text-center"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+      >
+        {sections.find((s) => s.id === (activeSection === 'projects' ? 'all' : activeSection))?.name || 'Projects'}
+      </motion.h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {getFilteredProjects().map((project, index) => (
+          <motion.div
+            key={index}
+            className="bg-gray-700 rounded-lg shadow-md overflow-hidden"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ scale: 1.03, boxShadow: '0 10px 20px rgba(0,0,0,0.3)' }}
+          >
+            {renderMedia(project.media, index)}
+            <div className="p-6">
+              <h4 className="text-xl font-semibold text-white">{project.title}</h4>
+              <p className="mt-2 text-gray-300">{project.description}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="inline-block bg-gray-600 rounded-full px-3 py-1 text-sm text-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-4 flex space-x-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-blue-500"
+                  >
+                    <FaGithub size={24} />
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-blue-500"
+                  >
+                    <FaExternalLinkAlt size={24} />
+                  </a>
+                )}
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-    </main>
+    </motion.div>
   );
 }
 

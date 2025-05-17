@@ -1,29 +1,25 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Nav from './Nav';
-import Hero from './Hero';
-import Projects from './Projects';
+import Home from './Home';
 import Footer from './Footer';
-import About from './About';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('all');
+  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-gray-100 font-sans">
+    <div className="min-h-screen bg-gray-900 text-white font-sans">
       <Nav activeSection={activeSection} setActiveSection={setActiveSection} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Projects activeSection={activeSection} />
-            </>
-          }
-        />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={<Home activeSection={activeSection} setActiveSection={setActiveSection} />}
+          />
+        </Routes>
+      </AnimatePresence>
       <Footer />
     </div>
   );
