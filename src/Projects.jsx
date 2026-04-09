@@ -14,6 +14,11 @@ import CreditCard from './assets/Uploads/Credit Card.jpeg';
 import CSE465 from './assets/Uploads/CSE465.png';
 import CSE465_1 from './assets/Uploads/CSE465 1.png';
 import CSE465_2 from './assets/Uploads/CSE465 2.png';
+import SurviveTheHorde1 from './assets/Uploads/Survive The Horde 1.png';
+import SurviveTheHorde2 from './assets/Uploads/Survive The Horde 2.png';
+import SurviveTheHorde3 from './assets/Uploads/Survive The Horde 3.png';
+import SurviveTheHorde4 from './assets/Uploads/Survive The Horde 4.png';
+import SurviveTheHorde5 from './assets/Uploads/Survive The Horde 5.png';
 
 const projects = {
   webApps: [
@@ -68,6 +73,20 @@ const projects = {
       media: [
         { src: Chess, type: 'image' },
         { src: Chess1, type: 'image' },
+      ],
+    },
+    {
+      title: 'Survive The Horde',
+      description: 'Mobile Survival Game published in playstore',
+      tech: ['Unity', 'C#'],
+      github: '',
+      live: 'https://play.google.com/store/apps/details?id=com.BelfordBlaze.SurviveTheHorde',
+      media: [
+        { src: SurviveTheHorde1, type: 'image' },
+        { src: SurviveTheHorde2, type: 'image' },
+        { src: SurviveTheHorde3, type: 'image' },
+        { src: SurviveTheHorde4, type: 'image' },
+        { src: SurviveTheHorde5, type: 'image' },
       ],
     },
   ],
